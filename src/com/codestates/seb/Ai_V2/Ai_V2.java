@@ -34,28 +34,28 @@ public class Ai_V2 {
     // 광고비 배열의 크기 받기.
     System.out.println("입력할 광고비의 갯수를 입력해주세요.");
     int advCount = sc.nextInt();
-    double [] advArray = new double[advCount];
+    double [] x_list = new double[advCount];
     for (int i = 0 ; i < advCount; i ++) {
       System.out.println(i+1 + "번째 광고비를 입력해주세요.");
-      advArray[i] = sc.nextDouble();
+      x_list[i] = sc.nextDouble();
     }
 
     // 반복문을 활용하여 광고비 배열을 출력합니다.
     System.out.println("[안내] 입력된 '광고비'는 다음과 같습니다.");
     for (int i = 0; i < advCount; i++) {
-      System.out.printf("%d 번째 : %f 원 \n", i + 1, advArray[i] );
+      System.out.printf("%d 번째 : %f 원 \n", i + 1, x_list[i] );
     }
 
     // 반복문을 활용해 다수의 광고비(x_list)를 호출하여 방문자 수 예측값을 연산합니다.
-    double [] x_list = new double[advCount];
+    double [] y_list = new double[advCount];
     for (int i = 0; i < advCount; i++) {
-      x_list[i] = a * advArray[i] + b;
+      y_list[i] = a * x_list[i] + b;
     }
     // 한 줄 띄기 및 예측 결과 안내 문구 출력
     System.out.println("=".repeat(30));
     System.out.println("[안내] AI의 '웹 페이지 방문자' 예측 결과는 다음과 같습니다.");
     for (int i = 0; i < advCount; i++) {
-      System.out.printf("%d 번째 예측 : %f \n", i + 1, x_list[i] );
+      System.out.printf("%d 번째 예측 : %f \n", i + 1, y_list[i] );
     }
   }
 }
